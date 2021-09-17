@@ -56,6 +56,7 @@ How to use:
 1. Update OGTokenTimelock contract with the desired beneficiary and timestamp
 2. Deploy OGTokenTimelock contract
 3. Deposit tokens in deployed OGTokenTimelock contract
+4. Beneficiary (or other) can run OGTokenTimelock contract function release() and if release date is passed, transfer the tokens to the beneficiary address
 
 Functions:
 token()             // Return held token
