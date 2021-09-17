@@ -11,6 +11,7 @@ Mintable
 Burnable
 Role Management
 Pausable
+Capped
 Snapshot
 Timelock
 
@@ -34,18 +35,20 @@ Work flow:
     $ git push
 
 Other functions: 
-Add file to project
-$ touch
-View project file status
-$ git status
-Check which is the current branch
-$ git branch 
+1. Add file to project
+    $ touch
+2. View project file status
+    $ git status
+3. Check which is the current branch
+    $ git branch 
 
 Git tutorial
 https://intellipaat.com/blog/tutorial/devops-tutorial/git-tutorial/
 
 
 # Timelock notes
+https://forum.openzeppelin.com/t/how-to-use-tokentimelock-sol-to-lock-up-tokens/738
+
 Unix epoch timestamp converter (blocktime)
 https://www.epochconverter.com/
 
