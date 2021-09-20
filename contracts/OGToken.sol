@@ -19,7 +19,7 @@ contract OGToken is ERC20, ERC20Burnable, ERC20Snapshot, AccessControl, Pausable
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _setupRole(SNAPSHOT_ROLE, msg.sender);
         _setupRole(PAUSER_ROLE, msg.sender);
-        _mint(msg.sender, 10000000 * 10 ** decimals()); // token amount minted at deployment
+        //_mint(msg.sender, 10000000 * 10 ** decimals()); // token amount minted at deployment
         _setupRole(MINTER_ROLE, msg.sender);
     }
 
@@ -53,5 +53,12 @@ contract OGToken is ERC20, ERC20Burnable, ERC20Snapshot, AccessControl, Pausable
 
     function _setupDecimals(uint8 decimals_) internal {
         _decimals = decimals_;
+    }
+    
+    // Check if cap is reached before calling _mint function
+    function _mint(address account, uint256 amount) internal virtual override(ERC20, ERC20Capped) {
+        uint256 _amount = amount * 10 ** decimals(); // To mint whole tokens without the need to add all the decimal zeros  
+        //require(ERC20.totalSupply() + amount <= cap(), "ERC20Capped: cap exceeded"); // test if needed
+        super._mint(account, _amount);
     }
 }
