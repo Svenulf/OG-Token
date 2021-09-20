@@ -14,7 +14,7 @@ contract OGToken is ERC20, ERC20Burnable, ERC20Snapshot, AccessControl, Pausable
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint8 private _decimals;
 
-    constructor() ERC20("OG Token", "OGT") ERC20Capped(100000000) {
+    constructor() ERC20("OG Token", "OGT") ERC20Capped(100000000000000) {
         _setupDecimals(6);
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _setupRole(SNAPSHOT_ROLE, msg.sender);
