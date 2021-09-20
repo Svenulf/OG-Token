@@ -55,7 +55,6 @@ contract OGToken is ERC20, ERC20Burnable, ERC20Snapshot, AccessControl, Pausable
     }
     
     function _mint(address account, uint256 amount) internal virtual override(ERC20, ERC20Capped) {
-        uint256 _amount = amount * 10 ** decimals();
-        super._mint(account, _amount);
+        super._mint(account, amount);
     }
 }
