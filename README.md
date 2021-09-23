@@ -1,69 +1,11 @@
-# OG-Token
-Origin Group Token
+# Title
+OGToken
 
-# Stages
-1. Deployment of token
-2. Deployment of a timelock contract for each beneficiary
-3. Send tokens to timelock address
+# Short description
+This is an un-audited smart contract code for the OGToken. The token is a standard tradeable ERC20 token with the following extensions: mintable, access control, burnable, snapshot, pausable and capped total supply. This smart contract is mainly constructed from the openZeppelin standard library.   
 
-# Functions
-Mintable
-Burnable
-Role Management
-Pausable
-Capped
-Snapshot
-Timelock
+# Security
+If any code vulnerability is found, please contact the github repository owner.
 
-# Git
-Initialize Git:
-1. initialize Git in folder (only once)
-    $ git init
-2. tell Git who you are
-    $ git config --global user.email "mailadress"
-    $ git config --global user.name "username"
-3. sync a remote repository
-    $ git remote set-url origin "https://github.com/Svenulf/OG-Token.git"
-    $ git pull origin master
-
-Work flow:
-1. add file to staging area (indexing file)
-    $ git add "filename or foldername"
-2. commit file to local depository
-    $ git commit -m "message"
-3. push file to Github
-    $ git push
-
-Other functions: 
-1. Add file to project
-    $ touch
-2. View project file status
-    $ git status
-3. Check which is the current branch
-    $ git branch 
-
-Git tutorial
-https://intellipaat.com/blog/tutorial/devops-tutorial/git-tutorial/
-
-
-# Timelock notes
-https://forum.openzeppelin.com/t/how-to-use-tokentimelock-sol-to-lock-up-tokens/738
-
-Unix epoch timestamp converter (blocktime)
-https://www.epochconverter.com/
-
-block.timestamp = current block timestamp in Unix Epoch Time  
-_releaseTime = block.timestamp + _lockedUpTime = 1 day ahead from now (if _lockedUpTime = 1 days)
-
-How to use:
-1. Update OGTokenTimelock contract with the desired beneficiary and timestamp
-2. Deploy OGTokenTimelock contract
-3. Deposit tokens in deployed OGTokenTimelock contract
-4. Beneficiary (or other) can run OGTokenTimelock contract function release() and if release date is passed, transfer the tokens to the beneficiary address
-
-Functions:
-token()             // Return held token
-beneficiary()       // Return beneficiary
-releaseTime()       // Return release time
-release()           // Release token to beneficiary if block.timestamp >= releaseTime()
-
+# License
+SPDX-License-Identifier: MIT
