@@ -1,5 +1,4 @@
 async function main () {
-    // We get the contract to deploy
     const Token = await ethers.getContractFactory('OGToken');
     console.log('Deploying OG Token...');
     const token = await Token.deploy();
