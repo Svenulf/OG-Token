@@ -1,7 +1,7 @@
 {
   "name": "og-token",
   "version": "1.0.0",
-  "description": "",
+  "description": "Origin Group Token",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,9 +11,13 @@
   "license": "ISC",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.10",
+    "@nomiclabs/hardhat-etherscan": "^2.1.6",
     "@openzeppelin/contracts": "^4.3.2",
     "ethers": "^5.4.7",
     "hardhat": "^2.6.4",
     "hardhat-deploy": "^0.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
   }
 }
