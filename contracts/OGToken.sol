@@ -88,7 +88,7 @@ contract OGToken is ERC20, ERC20Burnable, ERC20Snapshot, AccessControl, Pausable
 
     /**
     *   @dev Override of the internal _mint function from ERC20 and ERC20Capped. Calls the super function from ERC20Capped to check 
-    *   if capped amount of tokens is reached which if passed calls the super function in ERC20 to run the minting function 
+    *   if capped amount of tokens is reached, which if passed calls the super function in ERC20 to run the minting function 
     */ 
     function _mint(address account, uint256 amount) internal virtual override(ERC20, ERC20Capped) {
         super._mint(account, amount);
